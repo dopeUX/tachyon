@@ -64,7 +64,7 @@ export default function mineBlock(){
                  }
                  else{
                    if(selectedNode!==undefined){
-                     let x = Math.floor(Math.random()*501)+1
+                     let x = Math.floor(Math.random()*501)+101;
                      mine(nodes[selectedNode], x);
                    }
                    else{
