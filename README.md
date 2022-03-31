@@ -2,6 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ![Screenshot 2022-03-31 115612 1](https://user-images.githubusercontent.com/93445494/160990468-3957e564-8356-4e77-9507-c6a8318263a7.png)
 
+Proof of work blockchain :
+https://github.com/dopeUX/tachyon-blockchain
+
 ## Getting Started
 
 First, run the development server:
