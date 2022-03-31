@@ -5,6 +5,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Proof of work blockchain :
 https://github.com/dopeUX/tachyon-blockchain
 
+Currently 3 nodes running blockchain :
+
+Node 1 : Slytherine 
+Node 2 : Gryffindor
+Node 3 : HufflePuff
+
 ## Getting Started
 
 First, run the development server:
