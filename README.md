@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+![Frame 6](https://user-images.githubusercontent.com/93445494/160991012-2d2bbff6-4034-4703-a520-fb1a4ea2938a.png)
+g)
 
 Proof of work blockchain :
 https://github.com/dopeUX/tachyon-blockchain
