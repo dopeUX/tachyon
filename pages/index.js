@@ -1,32 +1,48 @@
 import react,{useState, useEffect} from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import Head from 'next/head';
 import MempoolCard from '../components/MempoolCard'
 import BlockchainCard from '../components/BlockchainCard';
-import getTransactions from './functions/getTransactions';
+import getTransactions from '../functions/getTransactions';
 import TextTransition, { presets } from "react-text-transition";
+import Loading from '../components/Loading';
 
 export default function Home() {
   const [mempool,setMempool] = useState([]);
   const [chain, setChain] = useState([]);
   const [desc,setDescs] = useState();
-  const [coins, setCoins] = useState(0);
+  const [coins, setCoins] = useState();
+  const [loading, setLoading] = useState(false);
   let d = ['frfre'];
 
   useEffect(()=>{
+     setLoading(true); 
      getTransactions().then(response=>{
+       setLoading(false);
        setMempool(response.transaction);
        setChain(response.chain);
+       setCoins(response.tachyons);
+
+       
       //  console.log(response.tachyons)
       //  setDescs([
       //    response.tachyons+' mined',
       //    'currently 3 nodes maintaining blockchain'
       //  ])
       // d.push(response.tachyons+' mined');
-       d.push('currently 3 nodes maintaining blockchain')
+    //   d.push('currently 3 nodes maintaining blockchain')
        
      })
   },[]);
+
+    useEffect(()=>{
+      if (!("Notification" in window)) {
+        console.log("This browser does not support desktop notification");
+      } else {
+        Notification.requestPermission();
+      }
+    });
 
   // useEffect(()=>{
   //   const intervalId = setInterval(() =>
@@ -36,12 +52,18 @@ export default function Home() {
   //   return () => clearTimeout(intervalId);
   // },[])
   
-  
+ 
   return (
+    
     <div className='hero'>
+      <Head>
+        <link rel='shortcut icon' href='/favicon.ico'/>
+      </Head>
+      {/* {showNotification()} */}
+      <Loading isLoading={loading}/>
        <h1 className='main-head'>Tachyon</h1>
        <h2 className='hero-desc'>
-        {coins} mined
+        {coins} tachyons mined
        </h2>
      
      <div className='hero-action-btns'>
